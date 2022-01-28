@@ -1,0 +1,241 @@
+{
+	"thankyou": {
+		"name": "Thank you for choosing to work with Tape",
+		"items": [
+			{
+
+				"name": "▲ START SOMETHING",
+				"state": "priority"
+			}
+		],
+		"vis": "true",
+		"pin": "true",
+		"guide": "true"
+	},
+	"also": {
+		"name": "also...",
+		"items": [
+			{
+				"name": "Expand the window to allow more columns",
+				"state": "approved"
+			},
+			{
+				"name": "You can drop in a folder to create items from anything inside it",
+				"state": ""
+			},
+			{
+				"name": "You can drop in a csv formatted .txt file to create items from values",
+				"state": ""
+			},
+			{
+				"name": "Saving is done automatically",
+				"state": "done"
+			}
+		],
+		"vis": "false",
+		"pin": "false"
+	},
+	"themes": {
+		"name": "themes",
+		"items": [
+			{
+				"name": "Drag and drop svg theme to load it",
+				"state": "priority"
+			},
+			{
+				"name": "CMD/CTRL+SHIFT+T — revert to the default theme",
+				"state": ""
+			},
+			{
+				"name": "Themes are simple svg files and easy to customise",
+				"state": "approved"
+			}
+		],
+		"vis": "false",
+		"pin": "false"
+	},
+	"shortcuts": {
+		"name": "keyboard shortcuts",
+		"items": [
+			{
+				"name": "ENTER — Make new collection",
+				"state": ""
+			},
+			{
+				"name": "TAB — Change layout mode",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL+F — Search in items",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL+G — Jump to collection",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL+O — Toggle always on top",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL+S — Export tape data to file",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL+P — Toggle privacy blur on current collection",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL+SHIFT+P — Toggle Privacy blur on all collections",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL+UP or DOWN to expand or collapse all collections",
+				"state": ""
+			},
+			{
+				"name": "CMD + - — Change type size. CMD 0 to reset size",
+				"state": ""
+			}
+		],
+		"vis": "false",
+		"pin": "false"
+	},
+	"graphs": {
+		"name": "graphs",
+		"items": [
+			{
+				"name": "A graph indicates the progress of items in a collection",
+				"state": "done"
+			},
+			{
+				"name": "▲ Hover the graph to expand for more detail",
+				"state": ""
+			},
+			{
+				"name": "Right click the graph to pin it open",
+				"state": "priority"
+			},
+			{
+				"name": "Click on a group segment to focus that state",
+				"state": ""
+			},
+			{
+				"name": "CMD/CTRL click on a group segment to sort by state",
+				"state": ""
+			},
+			{
+				"name": "ALT click on a group segment to filter out states",
+				"state": ""
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	},
+	"dismiss": {
+		"name": "Click the tick on the right of this to dismiss it to the bottom",
+		"vis": "true",
+		"pin": "false"
+	},
+	"move": {
+		"name": "◄ Click the far left of this to move it to the top",
+		"vis": "true",
+		"pin": "false"
+	},
+	"advanced": {
+		"name": "advanced workflow",
+		"items": [
+			{
+				"name": "Items can be hidden by clicking near the collection title",
+				"state": ""
+			},
+			{
+				"name": "Drag and drop items to rearrange them within or between collections",
+				"state": "approved"
+			},
+			{
+				"name": "Hover and press 0—5 to change item state",
+				"state": "priority"
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	},
+	"edit": {
+		"name": "click this title to edit the collection name",
+		"items": [
+			{
+				"name": "Deleting the text will allow you to delete the collection or item",
+				"state": ""
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	},
+	"basic": {
+		"name": "basic workflow",
+		"items": [
+			{
+				"name": "Click on the item text to edit it. ENTER to confirm any changes",
+				"state": ""
+			},
+			{
+				"name": "Click to the right side of items to change their state. Right click to toggle between DONE and PRIORITY",
+				"state": ""
+			},
+			{
+				"name": "▼ Click the groove below this to add new items",
+				"state": ""
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	},
+	"start": {
+		"name": "let's get started!",
+		"vis": "true",
+		"pin": "false"
+	},
+	"collection": {
+		"name": "this is a collection",
+		"items": [
+			{
+				"name": "This is an ITEM",
+				"state": ""
+			},
+			{
+				"name": "This is PRIORITY",
+				"state": "priority"
+			},
+			{
+				"name": "This is WORKING",
+				"state": "working"
+			},
+			{
+				"name": "This is SUBMITTED",
+				"state": "submitted"
+			},
+			{
+				"name": "This is APPROVED",
+				"state": "approved"
+			},
+			{
+				"name": "This is DONE",
+				"state": "done"
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	},
+	"project": {
+		"name": "this is your project",
+		"items": [
+			{
+				"name": "This is your work, or task",
+				"state": ""
+			}
+		],
+		"vis": "true",
+		"pin": "false"
+	}
+}
