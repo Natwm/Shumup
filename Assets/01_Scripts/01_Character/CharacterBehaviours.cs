@@ -28,6 +28,9 @@ public class CharacterBehaviours : TokenBehaviours
     [Header("Flag")]
     [SerializeField] private bool m_CanDash;
 
+    [SerializeField] private GameObject orientation;
+
+
 
 
     #region Awake | Start | Update
@@ -119,5 +122,14 @@ public class CharacterBehaviours : TokenBehaviours
     public CharacterController Controller { get => m_Controller; set => m_Controller = value; }
 
     #endregion
+    public void NewOrientation(GameObject newOrientation)
+    {
+        if (orientation != null)
+        {
+            orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
 
+        }
+        orientation = newOrientation;
+        orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+    }
 }
