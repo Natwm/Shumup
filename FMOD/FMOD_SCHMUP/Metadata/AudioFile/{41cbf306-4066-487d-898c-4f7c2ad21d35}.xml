@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{41cbf306-4066-487d-898c-4f7c2ad21d35}">
+		<property name="assetPath">
+			<value>ratp_sylve.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.1538541666666671</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{86ae28cf-03d1-4226-b21a-4b779da0eff9}</destination>
+		</relationship>
+	</object>
+</objects>
