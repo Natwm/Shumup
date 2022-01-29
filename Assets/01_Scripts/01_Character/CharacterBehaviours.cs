@@ -73,6 +73,13 @@ public class CharacterBehaviours : TokenBehaviours
 
     #endregion
 
+    public  virtual void ShootProjectile() 
+    {
+        ShootDisable();
+        m_FireTimer.ResetPlay();
+        Shoot(Vector3.up);
+    }
+
     void PlayerMovement(float moveHorizontal, float moveVertical)
     {
 

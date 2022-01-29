@@ -33,7 +33,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
 
     #region Shoot Logics
 
-    protected void ShootProjectile()
+    public void ShootProjectile()
     {
         ShootDisable();
         m_FireTimer.ResetPlay();
@@ -41,7 +41,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
 
     }
 
-    private void Shoot(Vector3 direction)
+    protected void Shoot(Vector3 direction)
     {
         GameObject bullet = Instantiate(m_bullet,transform.position, Quaternion.identity);
         bullet.GetComponent<BulletBehaviours>().MoveDirection = direction;
