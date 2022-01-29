@@ -24,8 +24,6 @@ public class shield : MonoBehaviour
             {
                 GameObject bullet = item.collider.gameObject.transform.parent.gameObject;
 
-                print(Vector3.Distance(CharacterBehaviours.instance.transform.position, bullet.transform.position));
-
                 bool isPerfect = Vector3.Distance(CharacterBehaviours.instance.transform.position, bullet.transform.position) < CharacterBehaviours.instance.MaxDistanceToPerfect && Vector3.Distance(CharacterBehaviours.instance.transform.position, bullet.transform.position) > CharacterBehaviours.instance.MinDistanceToPerfect;
 
                 if (!casualHit.Contains(bullet) && !perfectHit.Contains(bullet))
@@ -51,7 +49,7 @@ public class shield : MonoBehaviour
         {
             foreach (var item in casualHit)
             {
-                item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position, 3);
+                item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position,false);
             }
         }
 
@@ -59,7 +57,7 @@ public class shield : MonoBehaviour
         {
             foreach (var item in perfectHit)
             {
-                item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position, 8);
+                item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position,true);
             }
         }
         

@@ -84,4 +84,14 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
             Dead();
     }
     #endregion
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        BulletBehaviours hit;
+        if (collision.gameObject.TryGetComponent<BulletBehaviours>(out hit))
+        {
+            TakeDamage(hit.GetAmountOfDamage());
+            Destroy(hit.gameObject);
+        }
+    }
 }

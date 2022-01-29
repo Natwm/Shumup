@@ -16,7 +16,7 @@ public class BulletBehaviours : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        LaunchBullet();
+        //LaunchBullet();
     }
 
     private void Update()
@@ -30,9 +30,21 @@ public class BulletBehaviours : MonoBehaviour
         rb.velocity = MoveDirection * Speed;
     }
 
+    public void LaunchBullet(Vector3 direction, bool isPerfectShoot)
+    {
+        Speed = isPerfectShoot ? Speed * 1.2f : Speed * 1.35f;
+        GetComponent<Rigidbody>().velocity = direction * Speed;
+    }
+
     public void LaunchBullet(Vector3 direction, float speed)
     {
-        rb.velocity = direction * speed;
+        this.Speed = speed;
+        GetComponent<Rigidbody>().velocity = direction * speed;
+    }
+
+    public int GetAmountOfDamage()
+    {
+        return 1;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -43,6 +55,5 @@ public class BulletBehaviours : MonoBehaviour
             MoveDirection = collision.contacts[0].normal;
             LaunchBullet();
         }
-        
     }
 }
