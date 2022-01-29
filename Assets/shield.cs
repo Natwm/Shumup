@@ -2,27 +2,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class shield : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Vector3 m_DeflectSize;
 
-    // Update is called once per frame
-    void Update()
+    [Space]
+    [Header("List")]
+    [SerializeField] private List<GameObject> perfectHit = new List<GameObject>();
+    [SerializeField] private List<GameObject> casualHit = new List<GameObject>();
+    public void UseDeflect()
     {
-        
-    }
+        perfectHit.Clear();
+        casualHit.Clear();
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        BulletBehaviours bullet;
-        if (collision.gameObject.CompareTag("Bullet") && collision.gameObject.TryGetComponent<BulletBehaviours>(out bullet))
+        for (int i = 0; i < transform.childCount; i++)
         {
-            print(collision.contacts[0].normal);
-            bullet.LaunchBullet(-1*(collision.contacts[0].normal),10);
+            RaycastHit[] hit = Physics.BoxCastAll(transform.GetChild(i).transform.position, m_DeflectSize, Vector3.forward, Quaternion.identity, 2, CharacterBehaviours.instance.BulletLayer);
+
+            foreach (var item in hit)
+            {
+                GameObject bullet = item.collider.gameObject.transform.parent.gameObject;
+
+                print(Vector3.Distance(CharacterBehaviours.instance.transform.position, bullet.transform.position));
+
+                bool isPerfect = Vector3.Distance(CharacterBehaviours.instance.transform.position, bullet.transform.position) < CharacterBehaviours.instance.MaxDistanceToPerfect && Vector3.Distance(CharacterBehaviours.instance.transform.position, bullet.transform.position) > CharacterBehaviours.instance.MinDistanceToPerfect;
+
+                if (!casualHit.Contains(bullet) && !perfectHit.Contains(bullet))
+                {
+                    if (isPerfect)
+                        perfectHit.Add(bullet);
+                    else
+                        casualHit.Add(bullet);
+                }
+                else if(casualHit.Contains(bullet) && isPerfect)
+                {
+                    casualHit.Remove(bullet);
+                    perfectHit.Add(bullet);
+                }
+            }
         }
+        ApplyDeflect();
     }
+
+    public void ApplyDeflect()
+    {
+        if(casualHit.Count > 0)
+        {
+            foreach (var item in casualHit)
+            {
+                item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position, 3);
+            }
+        }
+
+        if(perfectHit.Count > 0)
+        {
+            foreach (var item in perfectHit)
+            {
+                item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position, 8);
+            }
+        }
+        
+    }
+
+    private void OnDrawGizmos()
+    {
+        /*for (int i = 0; i < transform.childCount; i++)
+        {
+            Gizmos.DrawCube(transform.GetChild(i).transform.position, m_DeflectSize);
+        }*/
+    }
+
 }

@@ -28,10 +28,15 @@ public class CharacterBehaviours : TokenBehaviours
     [Header("Flag")]
     [SerializeField] private bool m_CanDash;
 
+    [SerializeField] private GameObject m_DefectParent;
     [SerializeField] private GameObject orientation;
+    [SerializeField] private LayerMask bulletLayer;
 
 
-
+    [Space]
+    [Header("Perfect Deflect")]
+    [SerializeField] private float minDistanceToPerfect;
+    [SerializeField] private float maxDistanceToPerfect;
 
     #region Awake | Start | Update
     void Awake()
@@ -71,7 +76,7 @@ public class CharacterBehaviours : TokenBehaviours
         if (Input.GetKeyDown(KeyCode.N))
         {
             if (orientation != null)
-                orientation.GetComponent<Collider>().isTrigger = false;
+                orientation.GetComponent<shield>().UseDeflect();
         }
 
         PlayerMovement( moveHorizontal, moveVertical);
@@ -101,6 +106,18 @@ public class CharacterBehaviours : TokenBehaviours
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0).normalized;
 
         Controller.Move(movement.normalized * m_DashPower * Time.deltaTime);
+    }
+
+
+    public void NewOrientation(GameObject newOrientation)
+    {
+        if (orientation != null)
+        {
+            orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
+
+        }
+        orientation = newOrientation;
+        orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
     #region Dash
@@ -142,16 +159,12 @@ public class CharacterBehaviours : TokenBehaviours
     #region GETTER && SETTER
 
     public CharacterController Controller { get => m_Controller; set => m_Controller = value; }
+    public LayerMask BulletLayer { get => bulletLayer; set => bulletLayer = value; }
+    public float MinDistanceToPerfect { get => minDistanceToPerfect; set => minDistanceToPerfect = value; }
+    public float MaxDistanceToPerfect { get => maxDistanceToPerfect; set => maxDistanceToPerfect = value; }
 
     #endregion
-    public void NewOrientation(GameObject newOrientation)
-    {
-        if (orientation != null)
-        {
-            orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
 
-        }
-        orientation = newOrientation;
-        orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-    }
+
+
 }
