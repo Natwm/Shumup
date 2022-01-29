@@ -6,7 +6,6 @@ using DG.Tweening;
 
 public class BatBehaviour : BaseEnemyBehaviours
 {
-    private static List<Vector3> playerPosition;
     public float coolDownLine = 2.0f;
     public Color c1 = Color.yellow;
     public Color c2 = Color.red;
@@ -14,10 +13,12 @@ public class BatBehaviour : BaseEnemyBehaviours
     public Material lineMat;
     [SerializeField] public LayerMask layer;
     [SerializeField] public int damageGiven;
+    Coroutine co;
+    Timer timer;
     // Start is called before the first frame update
+    //usage example
     void Start()
     {
-        playerPosition = new List<Vector3>();
         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
         lineRenderer.material = lineMat;
         lineRenderer.widthMultiplier = 0.2f;
@@ -30,6 +31,11 @@ public class BatBehaviour : BaseEnemyBehaviours
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
         );
         lineRenderer.colorGradient = gradient;
+        timer = new Timer(1, test);
+        this.moveBat(new Vector3(0, Random.Range(0, -5), 0), true);
+    }
+    void test()
+    {
         this.moveBat(new Vector3(0, Random.Range(0, -5), 0), true);
     }
     IEnumerator FireMyLaser()
@@ -38,22 +44,26 @@ public class BatBehaviour : BaseEnemyBehaviours
         yield return new WaitForSeconds(coolDownLine);
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         RaycastHit hit;
-        
+        lineRenderer.positionCount = 0;
         if (Physics.Raycast(gameObject.transform.position, playerPosition - gameObject.transform.position, out hit, Mathf.Infinity, layer))
         {
-            Debug.Log(hit.transform.gameObject);
-            if (hit.transform.gameObject.CompareTag("Player"))
+            int random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
+            if (hit.transform.gameObject.CompareTag("Player") && random < 5)
             {
+                
+                Debug.Log(random);
+                Debug.DrawRay(gameObject.transform.position, playerPosition - gameObject.transform.position, Color.red, 2);
                 CharacterBehaviours.instance.TakeDamage(damageGiven);
-                Debug.Log("touched " + hit.transform.gameObject);
+
+                lineRenderer.positionCount = 2;
+                lineRenderer.SetPosition(0, gameObject.transform.position);
+                lineRenderer.SetPosition(1, playerPosition);
+                //Debug.Log("touched " + hit.transform.gameObject);
             }
-            
+
         }
-        Debug.DrawRay(gameObject.transform.position, playerPosition - gameObject.transform.position, Color.red, 2);
-        lineRenderer.positionCount = 0;
-        lineRenderer.positionCount = 2;
-        lineRenderer.SetPosition(0, gameObject.transform.position);
-        lineRenderer.SetPosition(1, playerPosition);
+
+
         yield return new WaitForSeconds(coolDownLine);
         this.localMove();
 
@@ -66,7 +76,7 @@ public class BatBehaviour : BaseEnemyBehaviours
         .SetLoops(-1, LoopType.Yoyo)
         .OnStepComplete(() =>
         {
-            Coroutine co = StartCoroutine(FireMyLaser());
+            co = StartCoroutine(FireMyLaser());
 
         });
     }
@@ -78,14 +88,15 @@ public class BatBehaviour : BaseEnemyBehaviours
         .SetEase(Ease.OutQuint)
         .OnStepComplete(() =>
         {
-            StopCoroutine("FireMyLaser");
-            this.moveBat(new Vector3(0, Random.Range(0, -5), 0));
+            StopCoroutine(co);
+            
+            timer.ResetPlay();
+           
         });
     }
     // Update is called once per frame
     void Update()
     {
-        //Debug.DrawRay(transform.position, transform.TransformDirection(new Vector3(0, 100f, 0.0f)), Color.red);
     }
 
 }

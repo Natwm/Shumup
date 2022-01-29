@@ -1891,7 +1891,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 16
-  damageGiven: 1
+  damageGiven: 0
 --- !u!4 &1070748890
 Transform:
   m_ObjectHideFlags: 0
