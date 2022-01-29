@@ -25,16 +25,16 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     [Space]
     [Header("Sound Fmod Action")]
     protected FMOD.Studio.EventInstance deathEffect;
-    [FMODUnity.EventRef] [SerializeField] protected string deathSound;
+    [SerializeField] protected FMODUnity.EventReference deathSound;
 
     protected FMOD.Studio.EventInstance hitEffect;
-    [FMODUnity.EventRef] [SerializeField] protected string hitSound;
+    [SerializeField] protected FMODUnity.EventReference hitSound;
 
     protected FMOD.Studio.EventInstance basicAttaqueEffect;
-    [FMODUnity.EventRef] [SerializeField] protected string basicAttaqueSound;
+    [SerializeField] protected FMODUnity.EventReference basicAttaqueSound;
 
     protected FMOD.Studio.EventInstance spawnEffect;
-    [FMODUnity.EventRef] [SerializeField] protected string spawnSound;
+    [SerializeField] protected FMODUnity.EventReference spawnSound;
 
 
     private void Start()

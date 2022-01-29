@@ -44,16 +44,16 @@ public class CharacterBehaviours : TokenBehaviours
     [Space]
     [Header("Sound Fmod Action")]
     FMOD.Studio.EventInstance hitBulletNormalEffect;
-    [FMODUnity.EventRef] [SerializeField] private string hitBulletNormalSound;
+    [SerializeField] private FMODUnity.EventReference hitBulletNormalSound;
 
     FMOD.Studio.EventInstance hitBulletFastEffect;
-    [FMODUnity.EventRef] [SerializeField] private string hitBulletFastSound;
+    [SerializeField] private FMODUnity.EventReference hitBulletFastSound;
 
     FMOD.Studio.EventInstance hitBulletVeryFastEffect;
-    [FMODUnity.EventRef] [SerializeField] private string hitBulletVeryFastSound;
+    [SerializeField] private FMODUnity.EventReference hitBulletVeryFastSound;
 
     FMOD.Studio.EventInstance criticalHitBulletEffect;
-    [FMODUnity.EventRef] [SerializeField] private string criticalHitBulletSound;
+    [SerializeField] private FMODUnity.EventReference criticalHitBulletSound;
 
     #region Awake | Start | Update
     void Awake()

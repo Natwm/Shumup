@@ -86,7 +86,7 @@ public class Boss : BaseEnemyBehaviours
     [SerializeField] private float m_TimeBeforTp;
 
     FMOD.Studio.EventInstance changePhaseEffect;
-    [FMODUnity.EventRef] [SerializeField] private string changePhaseSound;
+    [SerializeField] private FMODUnity.EventReference changePhaseSound;
 
     // Start is called before the first frame update
     void Start()
