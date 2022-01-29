@@ -18,17 +18,19 @@ public class CharacterBehaviours : TokenBehaviours
     [SerializeField] private float m_DashPower;
     [SerializeField] private float m_DashTimer;
     [SerializeField] private float m_TimeBetweenDash;
+    [SerializeField] private float m_TimeBetweenTwoDeflect;
 
     [Space]
     [Header("Timer")]
     Timer m_DashDuration;
     Timer m_DashWaitDuration;
+    Timer m_DeflectWaitDuration;
 
     [Space]
     [Header("Flag")]
     [SerializeField] private bool m_CanDash;
+    [SerializeField] private bool m_CanDeflect;
 
-    [SerializeField] private GameObject m_DefectParent;
     [SerializeField] private GameObject orientation;
     [SerializeField] private LayerMask bulletLayer;
 
@@ -52,6 +54,7 @@ public class CharacterBehaviours : TokenBehaviours
         m_FireTimer = new Timer(m_FireRate, ShootEnable);
         m_DashDuration = new Timer(m_DashTimer+0.5f, EnableCollider);
         m_DashWaitDuration = new Timer(m_TimeBetweenDash, DashEnable);
+        m_DeflectWaitDuration = new Timer(m_TimeBetweenTwoDeflect, DeflectEnable);
     }
 
     // Update is called once per frame
@@ -73,10 +76,15 @@ public class CharacterBehaviours : TokenBehaviours
             Dash( moveHorizontal,  moveVertical);
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N) && m_CanDeflect)
         {
             if (orientation != null)
+            {
+                m_DeflectWaitDuration.ResetPlay();
+                DeflectDisable();
                 orientation.GetComponent<shield>().UseDeflect();
+            }
+                
         }
 
         PlayerMovement( moveHorizontal, moveVertical);
@@ -141,6 +149,18 @@ public class CharacterBehaviours : TokenBehaviours
     }
 
 
+    #endregion
+
+    #region Deflect
+    void DeflectEnable()
+    {
+        m_CanDeflect = true;
+    }
+
+    void DeflectDisable()
+    {
+        m_CanDeflect = false;
+    }
     #endregion
 
     #region Collision
