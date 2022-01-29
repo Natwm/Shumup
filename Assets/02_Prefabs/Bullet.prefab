@@ -48,6 +48,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MoveDirection: {x: 0, y: 0, z: 0}
   m_Speed: 0
+  rebondMurSound:
+    Guid:
+      Data1: 2065755990
+      Data2: 1192298918
+      Data3: 1154569604
+      Data4: 385597196
+    Path: event:/SD/Rebond Balle Mur
+  rebondEnemySound:
+    Guid:
+      Data1: -567135422
+      Data2: 1223091676
+      Data3: -1449606239
+      Data4: 760576418
+    Path: event:/SD/Rebond Balle Ennemi
+  rebondPlayerSound:
+    Guid:
+      Data1: -1882428699
+      Data2: 1235262083
+      Data3: -670119784
+      Data4: -2040796055
+    Path: event:/SD/Rebond Balle Joueur
 --- !u!54 &1172187216252332309
 Rigidbody:
   m_ObjectHideFlags: 0

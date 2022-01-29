@@ -109,6 +109,7 @@ public class CharacterBehaviours : TokenBehaviours
         basicAttaqueEffect = FMODUnity.RuntimeManager.CreateInstance(basicAttaqueSound);
         spawnEffect = FMODUnity.RuntimeManager.CreateInstance(spawnSound);
         hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        deplacementEffect = FMODUnity.RuntimeManager.CreateInstance(deplacementSound);
 
         HitBulletNormalEffect = FMODUnity.RuntimeManager.CreateInstance(hitBulletNormalSound);
         HitBulletFastEffect = FMODUnity.RuntimeManager.CreateInstance(hitBulletFastSound);
@@ -146,10 +147,11 @@ public class CharacterBehaviours : TokenBehaviours
         if (orientation != null)
         {
             orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
-
+            orientation.gameObject.GetComponent<Renderer>().enabled = false;
         }
         orientation = newOrientation;
         orientation.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        orientation.gameObject.GetComponent<Renderer>().enabled = true;
     }
 
     #region Dash

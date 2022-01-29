@@ -36,6 +36,9 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     protected FMOD.Studio.EventInstance spawnEffect;
     [SerializeField] protected FMODUnity.EventReference spawnSound;
 
+    protected FMOD.Studio.EventInstance deplacementEffect;
+    [SerializeField] protected FMODUnity.EventReference deplacementSound;
+
 
     private void Start()
     {
@@ -122,7 +125,6 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
         if (collision.gameObject.TryGetComponent<BulletBehaviours>(out hit))
         {
             TakeDamage(hit.GetAmountOfDamage());
-            Destroy(hit.gameObject);
         }
     }
 }

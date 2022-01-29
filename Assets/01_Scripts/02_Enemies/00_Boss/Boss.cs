@@ -114,6 +114,7 @@ public class Boss : BaseEnemyBehaviours
         basicAttaqueEffect = FMODUnity.RuntimeManager.CreateInstance(basicAttaqueSound);
         spawnEffect = FMODUnity.RuntimeManager.CreateInstance(spawnSound);
         hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        deplacementEffect = FMODUnity.RuntimeManager.CreateInstance(deplacementSound);
 
         changePhaseEffect = FMODUnity.RuntimeManager.CreateInstance(changePhaseSound);
     }

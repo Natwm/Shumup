@@ -9,6 +9,17 @@ public class BulletBehaviours : MonoBehaviour
     [SerializeField] private Vector3 m_MoveDirection;
     [SerializeField] private float m_Speed;
 
+    [Space]
+    [Header("Sound Fmod Action")]
+    protected FMOD.Studio.EventInstance rebondMurEffect;
+    [SerializeField] protected FMODUnity.EventReference rebondMurSound;
+
+    protected FMOD.Studio.EventInstance rebondEnemyEffect;
+    [SerializeField] protected FMODUnity.EventReference rebondEnemySound;
+
+    protected FMOD.Studio.EventInstance rebondPlayerEffect;
+    [SerializeField] protected FMODUnity.EventReference rebondPlayerSound;
+
     public Vector3 MoveDirection { get => m_MoveDirection; set => m_MoveDirection = value; }
     public float Speed { get => m_Speed; set => m_Speed = value; }
 
@@ -23,6 +34,13 @@ public class BulletBehaviours : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
             LaunchBullet();
+    }
+
+    public virtual void SetUpFmod()
+    {
+        rebondPlayerEffect = FMODUnity.RuntimeManager.CreateInstance(rebondPlayerSound);
+        rebondEnemyEffect = FMODUnity.RuntimeManager.CreateInstance(rebondEnemySound);
+        rebondMurEffect = FMODUnity.RuntimeManager.CreateInstance(rebondMurSound);
     }
 
     public void LaunchBullet()
@@ -49,11 +67,19 @@ public class BulletBehaviours : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        MoveDirection = collision.contacts[0].normal;
+        LaunchBullet();
         if (collision.gameObject.CompareTag("Wall"))
         {
-            print(collision.contacts[0].normal);
-            MoveDirection = collision.contacts[0].normal;
-            LaunchBullet();
+            rebondMurEffect.start();
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            rebondPlayerEffect.start();
+        }
+        else
+        {
+            rebondEnemyEffect.start();
         }
     }
 }

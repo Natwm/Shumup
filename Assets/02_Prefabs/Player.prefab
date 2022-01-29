@@ -216,6 +216,41 @@ MonoBehaviour:
   m_CanShoot: 1
   m_CanBeHit: 1
   m_bullet: {fileID: 1172187216252332312, guid: c8c1c4bc460fb63459d64c426f0bfa17, type: 3}
+  deathSound:
+    Guid:
+      Data1: 2061519651
+      Data2: 1302723733
+      Data3: 870617748
+      Data4: 418242389
+    Path: event:/SD/Mort du personnage
+  hitSound:
+    Guid:
+      Data1: 1000779326
+      Data2: 1154347907
+      Data3: -1131805525
+      Data4: -1488324061
+    Path: "event:/SD/Joueur qui prends un d\xE9g\xE2t"
+  basicAttaqueSound:
+    Guid:
+      Data1: -1575957742
+      Data2: 1116216090
+      Data3: -968624255
+      Data4: 1292723996
+    Path: event:/SD/Frappe bullet vitesse normale
+  spawnSound:
+    Guid:
+      Data1: 651339716
+      Data2: 1249289806
+      Data3: 728116388
+      Data4: 2074699544
+    Path: event:/SD/Spawn joueur
+  deplacementSound:
+    Guid:
+      Data1: 1784328578
+      Data2: 1193504275
+      Data3: 1768758691
+      Data4: -967483530
+    Path: "event:/SD/d\xE9placement_player"
   m_Controller: {fileID: 9100592087869774287}
   m_Collider: {fileID: 9100592087869774286}
   m_DashPower: 2
@@ -230,6 +265,34 @@ MonoBehaviour:
     m_Bits: 16
   minDistanceToPerfect: 0.95
   maxDistanceToPerfect: 1.9
+  hitBulletNormalSound:
+    Guid:
+      Data1: 587044493
+      Data2: 1218847022
+      Data3: 288116415
+      Data4: -844471131
+    Path: event:/SD/La balle vitesse normale
+  hitBulletFastSound:
+    Guid:
+      Data1: -1667499803
+      Data2: 1268139055
+      Data3: 394535846
+      Data4: -1242082906
+    Path: event:/SD/La balle vitesse rapide
+  hitBulletVeryFastSound:
+    Guid:
+      Data1: -1289210999
+      Data2: 1160097430
+      Data3: -1029738082
+      Data4: 1164812515
+    Path: "event:/SD/La balle vitesse tr\xE9s rapide"
+  criticalHitBulletSound:
+    Guid:
+      Data1: 570489530
+      Data2: 1136800191
+      Data3: 70343824
+      Data4: 1884045532
+    Path: event:/SD/Sons coup critique
 --- !u!143 &9100592087869774287
 CharacterController:
   m_ObjectHideFlags: 0
@@ -386,6 +449,22 @@ PrefabInstance:
     - target: {fileID: 1672476254910698898, guid: aa07a545726d78642a3b8a2150c9f285, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391373404146106142, guid: aa07a545726d78642a3b8a2150c9f285, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391373404153040577, guid: aa07a545726d78642a3b8a2150c9f285, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391373404703773079, guid: aa07a545726d78642a3b8a2150c9f285, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391373405617686461, guid: aa07a545726d78642a3b8a2150c9f285, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4094055208621404188, guid: aa07a545726d78642a3b8a2150c9f285, type: 3}
       propertyPath: m_Name
