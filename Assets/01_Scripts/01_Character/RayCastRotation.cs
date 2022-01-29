@@ -4,7 +4,24 @@ using UnityEngine;
 
 public class RayCastRotation : MonoBehaviour
 {
+
+    public static RayCastRotation instance;
+
     [SerializeField] Material mat;
+
+    [SerializeField] GameObject shootGO;
+
+    public GameObject ShootGO { get => shootGO; set => shootGO = value; }
+
+
+    void Awake()
+    {
+        if (instance != null)
+            Debug.LogWarning("Multiple instance of same Singleton : RayCastRotation");
+        instance = this;
+    }
+
+
     // Update is called once per frame
     void FixedUpdate()
     {

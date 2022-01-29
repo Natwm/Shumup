@@ -17,7 +17,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
 
     [Space]
     [Header("Prefabs")]
-    [SerializeField] private GameObject m_bullet;
+    [SerializeField] protected GameObject m_bullet;
 
     protected Timer m_FireTimer;
 

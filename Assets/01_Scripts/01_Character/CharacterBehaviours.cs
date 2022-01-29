@@ -68,6 +68,12 @@ public class CharacterBehaviours : TokenBehaviours
             Dash( moveHorizontal,  moveVertical);
         }
 
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            if (orientation != null)
+                orientation.GetComponent<Collider>().isTrigger = false;
+        }
+
         PlayerMovement( moveHorizontal, moveVertical);
     }
 
@@ -77,7 +83,16 @@ public class CharacterBehaviours : TokenBehaviours
     {
         ShootDisable();
         m_FireTimer.ResetPlay();
-        Shoot(Vector3.up);
+        Shoot(RayCastRotation.instance.ShootGO.transform.position);
+    }
+
+    protected virtual void Shoot(Vector3 direction)
+    {
+        GameObject bullet = Instantiate(m_bullet, RayCastRotation.instance.ShootGO.transform.position, Quaternion.identity);
+        bullet.GetComponent<BulletBehaviours>().MoveDirection = direction;
+        bullet.GetComponent<BulletBehaviours>().Speed = 2f;
+
+        bullet.GetComponent<BulletBehaviours>().LaunchBullet();
     }
 
     void PlayerMovement(float moveHorizontal, float moveVertical)

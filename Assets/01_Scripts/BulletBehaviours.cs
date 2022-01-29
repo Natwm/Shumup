@@ -19,16 +19,30 @@ public class BulletBehaviours : MonoBehaviour
         LaunchBullet();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+            LaunchBullet();
+    }
 
     public void LaunchBullet()
     {
         rb.velocity = MoveDirection * Speed;
     }
 
+    public void LaunchBullet(Vector3 direction, float speed)
+    {
+        rb.velocity = direction * speed;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.contacts[0].normal);
-        MoveDirection = collision.contacts[0].normal;
-        LaunchBullet();
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            print(collision.contacts[0].normal);
+            MoveDirection = collision.contacts[0].normal;
+            LaunchBullet();
+        }
+        
     }
 }
