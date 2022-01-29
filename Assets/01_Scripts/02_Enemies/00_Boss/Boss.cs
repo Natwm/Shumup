@@ -50,6 +50,11 @@ public class Boss : BaseEnemyBehaviours
 
     bool isMoving;
 
+    
+
+    [SerializeField] private GameObject bulletSpawner;
+    [SerializeField] private GameObject bulletPrefabs;
+
 
     [Space]
     [Header("Param Modifiable")]
@@ -94,6 +99,8 @@ public class Boss : BaseEnemyBehaviours
         possibleChangeStatus.Add(zoning);
 
         startingPosition = transform.position;
+
+        m_FireTimer = new Timer(m_FireRate, ShootEnable);
     }
 
     // Update is called once per frame
@@ -101,6 +108,17 @@ public class Boss : BaseEnemyBehaviours
     {
         if (Input.GetKeyDown(KeyCode.Y))
             DefenseRushAttaque();
+
+        if(FindObjectsOfType<BulletBehaviours>().Length < 1 && m_CanShoot)
+        {
+            m_CanShoot = false;
+            m_FireTimer.ResetPlay();
+
+            GameObject bullet = Instantiate(bulletPrefabs, bulletSpawner.transform.position, Quaternion.identity);
+            Vector3 pos = new Vector3(CharacterBehaviours.instance.transform.position.x - bulletSpawner.transform.position.x, CharacterBehaviours.instance.transform.position.y - bullet.transform.position.y);
+            bullet.GetComponent<BulletBehaviours>().LaunchBullet(pos.normalized,5f);
+            Destroy(bullet, 10f);
+        }
     }
 
     #region Change Status
