@@ -7,7 +7,6 @@ public class RayCastRotation : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        #region
         //Get the Screen positions of the object
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
         //Get the Screen position of the mouse
