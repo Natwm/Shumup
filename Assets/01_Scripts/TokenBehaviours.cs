@@ -14,6 +14,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     [Space]
     [Header("Token Flag")]
     [SerializeField] protected bool m_CanShoot;
+    [SerializeField] protected bool m_CanBeHit = true;
 
     [Space]
     [Header("Prefabs")]
@@ -78,10 +79,14 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
 
     public void TakeDamage(int _AmountOfDamage)
     {
-        m_Health -=_AmountOfDamage;
+        if (m_CanBeHit)
+        {
+            m_Health -= _AmountOfDamage;
 
-        if (IsDead())
-            Dead();
+            if (IsDead())
+                Dead();
+        }
+        
     }
     #endregion
 

@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 9100592087869774286}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,9 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMouvement: 3
-  m_Health: 2
+  m_Health: 1
   m_FireRate: 1
   m_CanShoot: 1
+  m_CanBeHit: 1
   m_bullet: {fileID: 1172187216252332312, guid: c8c1c4bc460fb63459d64c426f0bfa17, type: 3}
   m_Controller: {fileID: 9100592087869774287}
   m_Collider: {fileID: 9100592087869774286}
@@ -222,7 +223,7 @@ MonoBehaviour:
   m_TimeBetweenDash: 1
   m_TimeBetweenTwoDeflect: 0.5
   m_CanDash: 1
-  m_CanDeflect: 0
+  m_CanDeflect: 1
   orientation: {fileID: 0}
   bulletLayer:
     serializedVersion: 2
