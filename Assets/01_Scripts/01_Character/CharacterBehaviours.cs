@@ -28,6 +28,7 @@ public class CharacterBehaviours : TokenBehaviours
     [Header("Flag")]
     [SerializeField] private bool m_CanDash;
 
+    
 
 
     #region Awake | Start | Update

@@ -15,6 +15,10 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     [Header("Token Flag")]
     [SerializeField] protected bool m_CanShoot;
 
+    [Space]
+    [Header("Prefabs")]
+    [SerializeField] private GameObject m_bullet;
+
     protected Timer m_FireTimer;
 
     private void Start()
@@ -33,6 +37,17 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     {
         ShootDisable();
         m_FireTimer.ResetPlay();
+        Shoot(Vector3.up);
+
+    }
+
+    private void Shoot(Vector3 direction)
+    {
+        GameObject bullet = Instantiate(m_bullet,transform.position, Quaternion.identity);
+        bullet.GetComponent<BulletBehaviours>().MoveDirection = direction;
+        bullet.GetComponent<BulletBehaviours>().Speed = 2f;
+
+        bullet.GetComponent<BulletBehaviours>().LaunchBullet();
     }
 
     #region Shoot Flag
