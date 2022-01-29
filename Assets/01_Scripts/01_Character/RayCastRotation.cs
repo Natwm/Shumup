@@ -29,6 +29,7 @@ public class RayCastRotation : MonoBehaviour
         Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
         //Get the Screen position of the mouse
         Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        //Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(new Vector2(Input.GetAxis("rightVertical"), Input.GetAxis("rightHorizontal")));
         //Get the angle between the points
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90f));

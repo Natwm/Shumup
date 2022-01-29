@@ -28,7 +28,7 @@ public class spawnBulletTest : MonoBehaviour
     {
         GameObject obj = Instantiate(prefab, SpawnTransform.transform);
 
-        obj.GetComponent<BulletBehaviours>().LaunchBullet(dir, 3);
+        obj.GetComponent<BulletBehaviours>().LaunchBullet(dir, 10f);
 
         Destroy(obj, 15f);
     }

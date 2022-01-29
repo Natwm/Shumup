@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6000612616123223722
+--- !u!114 &-8810551154722402853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,9 +10,225 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/TEST_3D
+  m_Name: event:/SD/Mort du personnage
   m_EditorClassIdentifier: 
-  Path: event:/TEST_3D
+  Path: event:/SD/Mort du personnage
+  Guid:
+    Data1: 2061519651
+    Data2: 1302723733
+    Data3: 870617748
+    Data4: 418242389
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8613124193745627800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SD/La balle vitesse tr\xE9s rapide"
+  m_EditorClassIdentifier: 
+  Path: "event:/SD/La balle vitesse tr\xE9s rapide"
+  Guid:
+    Data1: -1289210999
+    Data2: 1160097430
+    Data3: -1029738082
+    Data4: 1164812515
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7756804176062473254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Ennemi mort
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Ennemi mort
+  Guid:
+    Data1: -409451376
+    Data2: 1223131617
+    Data3: -1771242368
+    Data4: 1573296554
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7684891286033715425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Feu follet flame
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Feu follet flame
+  Guid:
+    Data1: -2118375912
+    Data2: 1192911364
+    Data3: 76110989
+    Data4: 1493708352
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12500
+--- !u!114 &-6964525532148121032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Rebond Balle Ennemi
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Rebond Balle Ennemi
+  Guid:
+    Data1: -567135422
+    Data2: 1223091676
+    Data3: -1449606239
+    Data4: 760576418
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6445814617420836680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Spawn ennemi
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Spawn ennemi
+  Guid:
+    Data1: -49850566
+    Data2: 1161753086
+    Data3: -1551819100
+    Data4: 2141257653
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5076693293691725603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Boss tape la balle
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Boss tape la balle
+  Guid:
+    Data1: -2049406449
+    Data2: 1224847662
+    Data3: -398200684
+    Data4: -162557445
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5045532640982948532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Joueur la bale
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Joueur la bale
+  Guid:
+    Data1: 880569023
+    Data2: 1252021468
+    Data3: 1324672400
+    Data4: 1847549232
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4726924972156832744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/test/TEST_3D
+  m_EditorClassIdentifier: 
+  Path: event:/SD/test/TEST_3D
   Guid:
     Data1: -1396175941
     Data2: 1161462026
@@ -27,6 +243,221 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4153
+--- !u!114 &-4549523637656520858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Ambiance/Crowd
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Ambiance/Crowd
+  Guid:
+    Data1: -1927378872
+    Data2: 1107799373
+    Data3: -1476891755
+    Data4: 898937640
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6363645843605971566}
+  - {fileID: -2128677640097201738}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 36000
+--- !u!114 &-3540518590083491130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Sons coup critique
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Sons coup critique
+  Guid:
+    Data1: 570489530
+    Data2: 1136800191
+    Data3: 70343824
+    Data4: 1884045532
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-3217399719006481996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/La balle spawn
+  m_EditorClassIdentifier: 
+  Path: event:/SD/La balle spawn
+  Guid:
+    Data1: 512762617
+    Data2: 1273259643
+    Data3: -809107271
+    Data4: 726647628
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-2990769907969526597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SD/Joueur qui prends un d\xE9g\xE2t"
+  m_EditorClassIdentifier: 
+  Path: "event:/SD/Joueur qui prends un d\xE9g\xE2t"
+  Guid:
+    Data1: 1000779326
+    Data2: 1154347907
+    Data3: -1131805525
+    Data4: -1488324061
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2980387445865325182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SD/d\xE9placement_player"
+  m_EditorClassIdentifier: 
+  Path: "event:/SD/d\xE9placement_player"
+  Guid:
+    Data1: 1784328578
+    Data2: 1193504275
+    Data3: 1768758691
+    Data4: -967483530
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2290951642251812848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/La balle vitesse normale
+  m_EditorClassIdentifier: 
+  Path: event:/SD/La balle vitesse normale
+  Guid:
+    Data1: 587044493
+    Data2: 1218847022
+    Data3: 288116415
+    Data4: -844471131
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2230738243539779884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/La balle vitesse rapide
+  m_EditorClassIdentifier: 
+  Path: event:/SD/La balle vitesse rapide
+  Guid:
+    Data1: -1667499803
+    Data2: 1268139055
+    Data3: 394535846
+    Data4: -1242082906
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2128677640097201738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Crowd/Happy
+  m_EditorClassIdentifier: 
+  Name: Happy
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4061713792
+    data2: 845519350
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2038348893152020190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,11 +473,38 @@ MonoBehaviour:
   Path: FMOD/FMOD_SCHMUP/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637790556746453391
+  lastModified: 637790779223622727
   FileSizes:
   - Name: Desktop
-    Value: 894
+    Value: 2272
   Exists: 1
+--- !u!114 &-516433482644779693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Rebond Balle Joueur
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Rebond Balle Joueur
+  Guid:
+    Data1: -1882428699
+    Data2: 1235262083
+    Data3: -670119784
+    Data4: -2040796055
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,16 +521,43 @@ MonoBehaviour:
   - {fileID: -2038348893152020190}
   - {fileID: 7014746991897595922}
   EditorEvents:
-  - {fileID: 4463755890095157001}
-  - {fileID: -6000612616123223722}
+  - {fileID: 2518476619046613539}
+  - {fileID: -5076693293691725603}
+  - {fileID: 3364217873408949963}
+  - {fileID: -7684891286033715425}
+  - {fileID: 1069862573139262905}
+  - {fileID: -8810551154722402853}
+  - {fileID: 7371236639940736702}
+  - {fileID: 6037930323313327173}
+  - {fileID: -6445814617420836680}
+  - {fileID: -2990769907969526597}
+  - {fileID: -6964525532148121032}
+  - {fileID: -4549523637656520858}
+  - {fileID: 7509203353577057673}
+  - {fileID: 8304263992768158226}
+  - {fileID: 965197719154457296}
+  - {fileID: -2980387445865325182}
+  - {fileID: -8613124193745627800}
+  - {fileID: 8126138848729047449}
+  - {fileID: 5761639520307191325}
+  - {fileID: -2290951642251812848}
+  - {fileID: -7756804176062473254}
+  - {fileID: -3540518590083491130}
+  - {fileID: -4726924972156832744}
+  - {fileID: -5045532640982948532}
+  - {fileID: 2395840080837343750}
+  - {fileID: -516433482644779693}
+  - {fileID: -2230738243539779884}
+  - {fileID: -3217399719006481996}
+  - {fileID: 46183992256086808}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7014746991897595922}
   StringsBanks:
   - {fileID: -2038348893152020190}
-  cacheTime: 637790556746453391
+  cacheTime: 637790779223702749
   cacheVersion: 10
---- !u!114 &4463755890095157001
+--- !u!114 &46183992256086808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,23 +567,236 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/TEST_2D
+  m_Name: event:/SD/Boss phase 2
   m_EditorClassIdentifier: 
-  Path: event:/TEST_2D
+  Path: event:/SD/Boss phase 2
   Guid:
-    Data1: -1867536014
-    Data2: 1152929559
-    Data3: 1530697100
-    Data4: 46138237
+    Data1: -536323077
+    Data2: 1190060582
+    Data3: 715889050
+    Data4: 164197845
   Banks:
   - {fileID: 7014746991897595922}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4153
+  Length: 0
+--- !u!114 &965197719154457296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SD/Sons ennemi prend un d\xE9g\xE2t"
+  m_EditorClassIdentifier: 
+  Path: "event:/SD/Sons ennemi prend un d\xE9g\xE2t"
+  Guid:
+    Data1: -537323647
+    Data2: 1119268452
+    Data3: -288833604
+    Data4: 1835221456
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1069862573139262905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Sons lancement balle (premier lancer)
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Sons lancement balle (premier lancer)
+  Guid:
+    Data1: 899950625
+    Data2: 1316826775
+    Data3: 1869417108
+    Data4: 1919854519
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2395840080837343750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Spawn joueur
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Spawn joueur
+  Guid:
+    Data1: 651339716
+    Data2: 1249289806
+    Data3: 728116388
+    Data4: 2074699544
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2518476619046613539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Frappe bullet vitesse rapide
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Frappe bullet vitesse rapide
+  Guid:
+    Data1: 1507154184
+    Data2: 1168843595
+    Data3: 36661675
+    Data4: -1823459738
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3364217873408949963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Frappe bullet vitesse normale
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Frappe bullet vitesse normale
+  Guid:
+    Data1: -1575957742
+    Data2: 1116216090
+    Data3: -968624255
+    Data4: 1292723996
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5761639520307191325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SD/Frappe bullet vitesse tr\xE8s rapide"
+  m_EditorClassIdentifier: 
+  Path: "event:/SD/Frappe bullet vitesse tr\xE8s rapide"
+  Guid:
+    Data1: 1945860492
+    Data2: 1295454772
+    Data3: 1380090520
+    Data4: -916552965
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6037930323313327173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Boss mort
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Boss mort
+  Guid:
+    Data1: -268793805
+    Data2: 1117018540
+    Data3: -570967916
+    Data4: 726941597
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6363645843605971566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Crowd/Sad
+  m_EditorClassIdentifier: 
+  Name: Sad
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1373406595
+    data2: 3787867817
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7014746991897595922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,8 +812,116 @@ MonoBehaviour:
   Path: FMOD/FMOD_SCHMUP/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637790508225044721
+  lastModified: 637790779223702749
   FileSizes:
   - Name: Desktop
-    Value: 44352
+    Value: 1756032
   Exists: 1
+--- !u!114 &7371236639940736702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/deplacement_boss
+  m_EditorClassIdentifier: 
+  Path: event:/SD/deplacement_boss
+  Guid:
+    Data1: 1196977955
+    Data2: 1221208691
+    Data3: -1251502664
+    Data4: -1785271030
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7509203353577057673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/Rebond Balle Mur
+  m_EditorClassIdentifier: 
+  Path: event:/SD/Rebond Balle Mur
+  Guid:
+    Data1: 2065755990
+    Data2: 1192298918
+    Data3: 1154569604
+    Data4: 385597196
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8126138848729047449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/SD/Boss qui prends un d\xE9g\xE2t"
+  m_EditorClassIdentifier: 
+  Path: "event:/SD/Boss qui prends un d\xE9g\xE2t"
+  Guid:
+    Data1: -1014809205
+    Data2: 1182274093
+    Data3: -337336389
+    Data4: 1990380580
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8304263992768158226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SD/test/TEST_2D
+  m_EditorClassIdentifier: 
+  Path: event:/SD/test/TEST_2D
+  Guid:
+    Data1: -1867536014
+    Data2: 1152929559
+    Data3: 1530697100
+    Data4: 46138237
+  Banks:
+  - {fileID: 7014746991897595922}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4153

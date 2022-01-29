@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3344ee3e-d8a6-49ab-8798-fa70e70fc13f}">
+		<property name="assetPath">
+			<value>Fire_Ball.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{86ae28cf-03d1-4226-b21a-4b779da0eff9}</destination>
+		</relationship>
+	</object>
+</objects>

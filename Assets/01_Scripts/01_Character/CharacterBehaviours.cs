@@ -70,7 +70,7 @@ public class CharacterBehaviours : TokenBehaviours
             Dash( moveHorizontal,  moveVertical);
         }
 
-        if (Input.GetKeyDown(KeyCode.N) && m_CanDeflect)
+        if (Input.GetKeyDown(KeyCode.Space) && m_CanDeflect)
         {
             if (orientation != null)
             {
