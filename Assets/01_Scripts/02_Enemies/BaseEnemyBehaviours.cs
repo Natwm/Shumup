@@ -15,15 +15,21 @@ public class BaseEnemyBehaviours : TokenBehaviours
         Vector3 position = Random.insideUnitSphere * 5;
         transform.DOMove(position, 2)
         .SetEase(Ease.OutQuint)
-        .OnStepComplete(() => { moveBat(new Vector3(0, Random.Range(0, -5), 0)); });
+        .OnStepComplete(() => {
+
+            moveBat(new Vector3(0, Random.Range(0, -5), 0)); 
+        });
     }
-    protected void moveBat(Vector3 pos)
+    protected void moveBat(Vector3 pos, bool isBat = false)
     {
         transform.DOMove(pos, 2)
         .SetEase(Ease.OutQuint)
         .SetLoops(-1, LoopType.Yoyo)
-        .OnStepComplete(() => { localMove(); });
+        .OnStepComplete(() => { 
+            localMove(); 
+        });
     }
+
     // Update is called once per frame
     void Update()
     {
