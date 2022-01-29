@@ -27,7 +27,7 @@ public class BulletBehaviours : MonoBehaviour
 
     public void LaunchBullet()
     {
-        rb.velocity = MoveDirection * Speed;
+        GetComponent<Rigidbody>().velocity = MoveDirection * Speed;
     }
 
     public void LaunchBullet(Vector3 direction, bool isPerfectShoot)
