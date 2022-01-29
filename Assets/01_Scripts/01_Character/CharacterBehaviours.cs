@@ -63,12 +63,6 @@ public class CharacterBehaviours : TokenBehaviours
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space) && m_CanShoot)
-        {
-            print("shoot");
-            ShootProjectile();
-        }
-
         if (Input.GetKeyDown(KeyCode.LeftShift) && m_CanDash)
         {
             DashDisable();
