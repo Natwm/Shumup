@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1a87a4a2-ea98-4134-a801-087809c859ea}">
+		<property name="assetPath">
+			<value>Crowd_Happy36_loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>36</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{86ae28cf-03d1-4226-b21a-4b779da0eff9}</destination>
+		</relationship>
+	</object>
+</objects>
