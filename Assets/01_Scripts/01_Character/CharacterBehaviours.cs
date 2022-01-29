@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using FMOD.Studio;
 
 public class CharacterBehaviours : TokenBehaviours
 {
@@ -40,6 +41,20 @@ public class CharacterBehaviours : TokenBehaviours
     [SerializeField] private float minDistanceToPerfect;
     [SerializeField] private float maxDistanceToPerfect;
 
+    [Space]
+    [Header("Sound Fmod Action")]
+    FMOD.Studio.EventInstance hitBulletNormalEffect;
+    [FMODUnity.EventRef] [SerializeField] private string hitBulletNormalSound;
+
+    FMOD.Studio.EventInstance hitBulletFastEffect;
+    [FMODUnity.EventRef] [SerializeField] private string hitBulletFastSound;
+
+    FMOD.Studio.EventInstance hitBulletVeryFastEffect;
+    [FMODUnity.EventRef] [SerializeField] private string hitBulletVeryFastSound;
+
+    FMOD.Studio.EventInstance criticalHitBulletEffect;
+    [FMODUnity.EventRef] [SerializeField] private string criticalHitBulletSound;
+
     #region Awake | Start | Update
     void Awake()
     {
@@ -55,6 +70,7 @@ public class CharacterBehaviours : TokenBehaviours
         m_DashDuration = new Timer(m_DashTimer+0.5f, EnableCollider);
         m_DashWaitDuration = new Timer(m_TimeBetweenDash, DashEnable);
         m_DeflectWaitDuration = new Timer(m_TimeBetweenTwoDeflect, DeflectEnable);
+        SetUpFmod();
     }
 
     // Update is called once per frame
@@ -85,6 +101,20 @@ public class CharacterBehaviours : TokenBehaviours
     }
 
     #endregion
+
+    public virtual void SetUpFmod() 
+    {
+        deathEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
+        hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        basicAttaqueEffect = FMODUnity.RuntimeManager.CreateInstance(basicAttaqueSound);
+        spawnEffect = FMODUnity.RuntimeManager.CreateInstance(spawnSound);
+        hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+
+        HitBulletNormalEffect = FMODUnity.RuntimeManager.CreateInstance(hitBulletNormalSound);
+        HitBulletFastEffect = FMODUnity.RuntimeManager.CreateInstance(hitBulletFastSound);
+        HitBulletVeryFastEffect = FMODUnity.RuntimeManager.CreateInstance(hitBulletVeryFastSound);
+        CriticalHitBulletEffect = FMODUnity.RuntimeManager.CreateInstance(criticalHitBulletSound);
+    }
 
     public  virtual void ShootProjectile() 
     {
@@ -176,6 +206,10 @@ public class CharacterBehaviours : TokenBehaviours
     public LayerMask BulletLayer { get => bulletLayer; set => bulletLayer = value; }
     public float MinDistanceToPerfect { get => minDistanceToPerfect; set => minDistanceToPerfect = value; }
     public float MaxDistanceToPerfect { get => maxDistanceToPerfect; set => maxDistanceToPerfect = value; }
+    public EventInstance HitBulletFastEffect { get => hitBulletFastEffect; set => hitBulletFastEffect = value; }
+    public EventInstance HitBulletNormalEffect { get => hitBulletNormalEffect; set => hitBulletNormalEffect = value; }
+    public EventInstance HitBulletVeryFastEffect { get => hitBulletVeryFastEffect; set => hitBulletVeryFastEffect = value; }
+    public EventInstance CriticalHitBulletEffect { get => criticalHitBulletEffect; set => criticalHitBulletEffect = value; }
 
     #endregion
 

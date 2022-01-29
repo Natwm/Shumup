@@ -85,6 +85,9 @@ public class Boss : BaseEnemyBehaviours
     [SerializeField] private float m_TimeDefenseRush;
     [SerializeField] private float m_TimeBeforTp;
 
+    FMOD.Studio.EventInstance changePhaseEffect;
+    [FMODUnity.EventRef] [SerializeField] private string changePhaseSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +104,18 @@ public class Boss : BaseEnemyBehaviours
         startingPosition = transform.position;
 
         m_FireTimer = new Timer(m_FireRate, ShootEnable);
+        SetUpFmod();
+    }
+
+    public virtual void SetUpFmod()
+    {
+        deathEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
+        hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        basicAttaqueEffect = FMODUnity.RuntimeManager.CreateInstance(basicAttaqueSound);
+        spawnEffect = FMODUnity.RuntimeManager.CreateInstance(spawnSound);
+        hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+
+        changePhaseEffect = FMODUnity.RuntimeManager.CreateInstance(changePhaseSound);
     }
 
     // Update is called once per frame

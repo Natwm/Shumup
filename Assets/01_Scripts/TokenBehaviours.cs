@@ -22,14 +22,38 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
 
     protected Timer m_FireTimer;
 
+    [Space]
+    [Header("Sound Fmod Action")]
+    protected FMOD.Studio.EventInstance deathEffect;
+    [FMODUnity.EventRef] [SerializeField] protected string deathSound;
+
+    protected FMOD.Studio.EventInstance hitEffect;
+    [FMODUnity.EventRef] [SerializeField] protected string hitSound;
+
+    protected FMOD.Studio.EventInstance basicAttaqueEffect;
+    [FMODUnity.EventRef] [SerializeField] protected string basicAttaqueSound;
+
+    protected FMOD.Studio.EventInstance spawnEffect;
+    [FMODUnity.EventRef] [SerializeField] protected string spawnSound;
+
+
     private void Start()
     {
-        
+        SetUpFmod();
     }
 
     private void Update()
     {
    
+    }
+
+    public void SetUpFmod()
+    {
+        deathEffect = FMODUnity.RuntimeManager.CreateInstance(deathSound);
+        hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
+        basicAttaqueEffect = FMODUnity.RuntimeManager.CreateInstance(basicAttaqueSound);
+        spawnEffect = FMODUnity.RuntimeManager.CreateInstance(spawnSound);
+        hitEffect = FMODUnity.RuntimeManager.CreateInstance(hitSound);
     }
 
     #region Shoot Logics
@@ -69,7 +93,8 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     #region Interface
     public void Dead()
     {
-        Destroy(this.gameObject);
+        deathEffect.start();
+        Destroy(this.gameObject,1.5f);
     }
 
     public bool IsDead()
@@ -82,6 +107,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
         if (m_CanBeHit)
         {
             m_Health -= _AmountOfDamage;
+            hitEffect.start();
 
             if (IsDead())
                 Dead();

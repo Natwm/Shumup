@@ -47,6 +47,16 @@ public class shield : MonoBehaviour
     {
         if(casualHit.Count > 0)
         {
+            float bulletSpeed = casualHit[0].transform.parent.GetComponent<BulletBehaviours>().Speed;
+
+            if(bulletSpeed < 5)
+                CharacterBehaviours.instance.HitBulletNormalEffect.start();
+            else if (bulletSpeed < 8)
+                CharacterBehaviours.instance.HitBulletFastEffect.start();
+            else if( bulletSpeed <10)
+                CharacterBehaviours.instance.HitBulletVeryFastEffect.start();
+
+
             foreach (var item in casualHit)
             {
                 item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position,false);
@@ -55,6 +65,7 @@ public class shield : MonoBehaviour
 
         if(perfectHit.Count > 0)
         {
+            CharacterBehaviours.instance.CriticalHitBulletEffect.start();
             foreach (var item in perfectHit)
             {
                 item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position,true);
