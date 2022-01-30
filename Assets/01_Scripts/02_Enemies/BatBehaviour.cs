@@ -53,7 +53,7 @@ public class BatBehaviour : BaseEnemyBehaviours
         RaycastHit hit;
         lineRenderer.positionCount = 0;
         // test sans raycast, car shoot et non pas laser
-        Debug.Log("jfidosqfoisd");
+       
         int random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
         if (random < 5)
         {
