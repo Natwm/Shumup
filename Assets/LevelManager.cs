@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
 
     public int wave;
 
+    public int unitKill;
+
     void Awake()
     {
         if (instance != null)
@@ -32,8 +34,24 @@ public class LevelManager : MonoBehaviour
         
     }
 
+    public bool isWaveFinish()
+    {
+        unitKill++;
+        return unitKill >= GameManager.instance.enemies;
+    }
+
+    public void UnitIsKill()
+    {
+        if (isWaveFinish())
+        {
+            wave++;
+            NewWave(wave);
+        }
+    }
+
     public void NewWave(int wave = 1)
     {
+        GameManager.instance.enemies = wave;
         ScoreManager.instance.GainByNoDamage();
 
         for (int i = 0; i < wave; i++)

@@ -132,6 +132,16 @@ public class BatBehaviour : BaseEnemyBehaviours
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Dead();
+        }
     }
 
+    public override void Dead()
+    {
+        LevelManager.instance.UnitIsKill();
+        deathEffect.start();
+        Destroy(this.gameObject, .5f);
+    }
 }

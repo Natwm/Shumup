@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     CharacterBehaviours player;
-    public BatBehaviour[] enemies;
+    public int enemies;
+
 
     void Awake()
     {
@@ -23,7 +24,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = CharacterBehaviours.instance;
-        enemies = GameObject.FindObjectsOfType<BatBehaviour>();
     }
 
     void StopTime(bool isStop = true)
