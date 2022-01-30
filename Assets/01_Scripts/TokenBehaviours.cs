@@ -8,7 +8,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     [Space]
     [Header("Token Status")]
     [SerializeField] protected int speedMouvement;
-    [SerializeField] protected int m_Health;
+    [SerializeField] private int health;
     [SerializeField] protected float m_FireRate;
 
     [Space]
@@ -39,6 +39,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
     protected FMOD.Studio.EventInstance deplacementEffect;
     [SerializeField] protected FMODUnity.EventReference deplacementSound;
 
+    public int Health { get => health; set => health = value; }
 
     private void Start()
     {
@@ -102,14 +103,14 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
 
     public bool IsDead()
     {
-        return m_Health <= 0;
+        return Health <= 0;
     }
 
-    public void TakeDamage(int _AmountOfDamage)
+    public virtual void TakeDamage(int _AmountOfDamage)
     {
         if (m_CanBeHit)
         {
-            m_Health -= _AmountOfDamage;
+            Health -= _AmountOfDamage;
             hitEffect.start();
 
             if (IsDead())

@@ -63,4 +63,19 @@ public class BaseEnemyBehaviours : TokenBehaviours
     {
         
     }
+
+    public override void TakeDamage(int _AmountOfDamage)
+    {
+        if (m_CanBeHit)
+        {
+            Health -= _AmountOfDamage;
+            hitEffect.start();
+
+            ScoreManager.instance.GainByKill();
+
+            if (IsDead())
+                Dead();
+        }
+
+    }
 }

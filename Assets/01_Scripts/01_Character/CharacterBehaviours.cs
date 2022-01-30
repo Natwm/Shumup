@@ -201,6 +201,21 @@ public class CharacterBehaviours : TokenBehaviours
     }
     #endregion
 
+    public override void TakeDamage(int _AmountOfDamage)
+    {
+        if (m_CanBeHit)
+        {
+            Health -= _AmountOfDamage;
+            hitEffect.start();
+
+            ScoreManager.instance.LooseByDamage();
+
+            if (IsDead())
+                Dead();
+        }
+
+    }
+
 
     #region GETTER && SETTER
 
