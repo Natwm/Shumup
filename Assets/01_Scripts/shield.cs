@@ -6,7 +6,7 @@ using UnityEngine;
 public class shield : MonoBehaviour
 {
     [SerializeField] private Vector3 m_DeflectSize;
-
+    public static ScoreManager instance;
     [Space]
     [Header("List")]
     [SerializeField] private List<GameObject> perfectHit = new List<GameObject>();
@@ -30,6 +30,7 @@ public class shield : MonoBehaviour
                 {
                     if (isPerfect)
                         perfectHit.Add(bullet);
+                        
                     else
                         casualHit.Add(bullet);
                 }
@@ -66,6 +67,7 @@ public class shield : MonoBehaviour
         if(perfectHit.Count > 0)
         {
             CharacterBehaviours.instance.CriticalHitBulletEffect.start();
+            ScoreManager.instance.GainByPerfectShoot();
             foreach (var item in perfectHit)
             {
                 item.transform.parent.gameObject.GetComponent<BulletBehaviours>().LaunchBullet(RayCastRotation.instance.ShootGO.transform.position,true);
