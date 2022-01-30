@@ -52,14 +52,26 @@ public class BatBehaviour : BaseEnemyBehaviours
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         RaycastHit hit;
         lineRenderer.positionCount = 0;
-
+        // test sans raycast, car shoot et non pas laser
+        Debug.Log("jfidosqfoisd");
+        int random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
+        if (random < 5)
+        {
+            //Le vrai truc de lancer (proba de shoot)
+            GameObject obj = Instantiate(prefab, gameObject.transform.position + new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+            obj.GetComponent<BulletBehaviours>().LaunchBullet(dir, 10f);
+        }
 
         //Destroy(obj, 15f);
         if (Physics.Raycast(gameObject.transform.position, playerPosition - gameObject.transform.position, out hit, Mathf.Infinity, layer))
         {
-            int random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
-            if(random < 5)
+            Debug.Log("jfidosqfoisd");
+            random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
+
+
+            if (random < 5)
             {
+                //Le vrai truc de lancer (proba de shoot)
                 GameObject obj = Instantiate(prefab, gameObject.transform.position + new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
                 obj.GetComponent<BulletBehaviours>().LaunchBullet(dir, 10f);
             }
