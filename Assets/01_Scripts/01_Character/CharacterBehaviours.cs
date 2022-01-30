@@ -211,7 +211,11 @@ public class CharacterBehaviours : TokenBehaviours
             ScoreManager.instance.LooseByDamage();
 
             if (IsDead())
+            {
+                GameManager.instance.EndGame();
                 Dead();
+            }
+                
         }
 
     }

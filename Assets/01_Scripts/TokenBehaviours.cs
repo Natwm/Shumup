@@ -95,7 +95,7 @@ public class TokenBehaviours : MonoBehaviour, IDamagable
 
 
     #region Interface
-    public void Dead()
+    public virtual void Dead()
     {
         deathEffect.start();
         Destroy(this.gameObject,1.5f);
