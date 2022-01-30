@@ -15,6 +15,9 @@ public class BatBehaviour : BaseEnemyBehaviours
     [SerializeField] public int damageGiven;
     Coroutine co;
     Timer timer;
+    public GameObject prefab;
+    public Vector3 dir;
+
     // Start is called before the first frame update
     //usage example
     void Start()
@@ -36,7 +39,11 @@ public class BatBehaviour : BaseEnemyBehaviours
     }
     void test()
     {
-        this.moveBat(new Vector3(0, Random.Range(0, -5), 0), true);
+        if(gameObject.transform.gameObject != null)
+        {
+            this.moveBat(new Vector3(0, Random.Range(0, -5), 0), true);
+        }
+
     }
     IEnumerator FireMyLaser()
     {
@@ -45,19 +52,39 @@ public class BatBehaviour : BaseEnemyBehaviours
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
         RaycastHit hit;
         lineRenderer.positionCount = 0;
+        // test sans raycast, car shoot et non pas laser
+        Debug.Log("jfidosqfoisd");
+        int random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
+        if (random < 5)
+        {
+            //Le vrai truc de lancer (proba de shoot)
+            GameObject obj = Instantiate(prefab, gameObject.transform.position + new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+            obj.GetComponent<BulletBehaviours>().LaunchBullet(dir, 10f);
+        }
+
+        //Destroy(obj, 15f);
         if (Physics.Raycast(gameObject.transform.position, playerPosition - gameObject.transform.position, out hit, Mathf.Infinity, layer))
         {
-            int random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
+            Debug.Log("jfidosqfoisd");
+            random = GetRandomValue(new RandomSelection(0, 5, .5f), new RandomSelection(6, 8, .3f), new RandomSelection(9, 10, .2f));
+
+
+            if (random < 5)
+            {
+                //Le vrai truc de lancer (proba de shoot)
+                GameObject obj = Instantiate(prefab, gameObject.transform.position + new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+                obj.GetComponent<BulletBehaviours>().LaunchBullet(dir, 10f);
+            }
             if (hit.transform.gameObject.CompareTag("Player") && random < 5)
             {
-                
-                Debug.Log(random);
-                Debug.DrawRay(gameObject.transform.position, playerPosition - gameObject.transform.position, Color.red, 2);
-                CharacterBehaviours.instance.TakeDamage(damageGiven);
+                // LASER IF, replace with bulletshot
+                //Debug.Log(random);
+                //Debug.DrawRay(gameObject.transform.position, playerPosition - gameObject.transform.position, Color.red, 2);
+                //CharacterBehaviours.instance.TakeDamage(damageGiven);
 
-                lineRenderer.positionCount = 2;
-                lineRenderer.SetPosition(0, gameObject.transform.position);
-                lineRenderer.SetPosition(1, playerPosition);
+                //lineRenderer.positionCount = 2;
+                //lineRenderer.SetPosition(0, gameObject.transform.position);
+                //lineRenderer.SetPosition(1, playerPosition);
                 //Debug.Log("touched " + hit.transform.gameObject);
             }
 
@@ -83,6 +110,14 @@ public class BatBehaviour : BaseEnemyBehaviours
     protected virtual void localMove()
     {
         Vector3 position = Random.insideUnitSphere * 5;
+        Ray ray = new Ray(gameObject.transform.position, Vector3.forward);
+        RaycastHit hit;
+/*        if (Physics.SphereCast(ray, 5, out hit))
+        {
+            if (hit.transform.gameObject.CompareTag("bat")) {
+                position = Random.insideUnitSphere * 5;
+            }
+        }*/
         position = new Vector3(position.x, position.y, 0);
         transform.DOMove(position, 2)
         .SetEase(Ease.OutQuint)

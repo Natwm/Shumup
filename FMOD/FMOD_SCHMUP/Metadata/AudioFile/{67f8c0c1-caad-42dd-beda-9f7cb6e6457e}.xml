@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{67f8c0c1-caad-42dd-beda-9f7cb6e6457e}">
+		<property name="assetPath">
+			<value>Rebond_Balle_Mur_3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{86ae28cf-03d1-4226-b21a-4b779da0eff9}</destination>
+		</relationship>
+	</object>
+</objects>
